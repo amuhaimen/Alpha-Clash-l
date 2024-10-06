@@ -1,6 +1,9 @@
 function continueGame() {
   const alphabet = getARandomAlphabet();
-  //   getARandomAlphabet();
+  //   console.log(alphabet);
+  const currentAlphabet = document.getElementById("current_alphabet");
+  currentAlphabet.innerText = alphabet;
+  setBackgroundColor(alphabet);
 }
 
 function play() {
