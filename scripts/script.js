@@ -27,7 +27,7 @@ function handleKeyboardKeyUpEvent(event) {
     // start a new round
     removeBackgroundColor(expectedAlphabet);
     continueGame();
-    console.log("you got the point");
+    // console.log("you got the point");
   } else {
     const currentLife = getTextElementValueById("current_life");
     const updatedLife = currentLife - 1;
@@ -47,17 +47,22 @@ function handleKeyboardKeyUpEvent(event) {
 
     // =========================================================================
 
-    console.log("XXXXXXXXXXXXXXX");
+    // console.log("XXXXXXXXXXXXXXX");
   }
 }
 
 document.addEventListener("keyup", handleKeyboardKeyUpEvent);
 
 function continueGame() {
+  // step 1: generate a random alphabet
   const alphabet = getARandomAlphabet();
   //   console.log(alphabet);
+
+  // step 2: set randomly generated alphabet to the screen (show it)
   const currentAlphabet = document.getElementById("current_alphabet");
   currentAlphabet.innerText = alphabet;
+
+  // step 3: set background color
   setBackgroundColor(alphabet);
 }
 
@@ -79,4 +84,12 @@ function play() {
 function gameOver() {
   hideElementById("play_ground");
   showElementById("final_score");
+
+  // show the last score
+  const lastScore = getTextElementValueById("current_score");
+  setTextElementValueById("last_score", lastScore);
+
+  // clear the last selected highlighted alphabet
+  const currentAlphabet = getElementTextById("current_alphabet");
+  removeBackgroundColor(currentAlphabet);
 }
