@@ -114,13 +114,15 @@
 
       <!-- final score start -->
       <section
-        class="score flex justify-center items-center min-h-screen hidden"
+        id="final_score"
+        class="flex justify-center items-center min-h-screen hidden"
       >
         <div class="text-center space-y-4 bg-[#FFFFFF33] p-11 rounded-2xl">
+          <h4 class="text-white text-4xl">Game Over</h4>
           <h2 class="text-white text-6xl font-extrabold">
             Score : <span>14</span>
           </h2>
-          <button class="btn">Play Again</button>
+          <button class="btn" onclick="play()">Play Again</button>
           <p class="text-white text-xl font-medium">
             Practice will make you Pro
           </p>
