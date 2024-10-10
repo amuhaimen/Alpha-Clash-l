@@ -2,6 +2,11 @@ function handleKeyboardKeyUpEvent(event) {
   //  player pressed key
   const playerPressed = event.key;
 
+  // stop the game
+  if (playerPressed === "Escape") {
+    gameOver();
+  }
+
   // expected pressed key
   const currentAlphabetElement = document.getElementById("current_alphabet");
   const currentAlphabet = currentAlphabetElement.innerText;
